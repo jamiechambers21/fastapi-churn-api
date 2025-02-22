@@ -1,0 +1,35 @@
+color.branch=auto
+color.diff=auto
+color.interactive=auto
+color.status=auto
+color.ui=auto
+color.branch.current=green
+color.branch.remote=yellow
+core.pager=less -FRSX
+core.editor=code --wait
+alias.co=checkout
+alias.st=status -sb
+alias.br=branch
+alias.ci=commit
+alias.fo=fetch origin
+alias.d=!git --no-pager diff
+alias.dt=difftool
+alias.stat=!git --no-pager diff --stat
+alias.remotesethead=remote set-head origin --auto
+alias.defaultbranch=!git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
+alias.sweep=!git branch --merged $(git defaultBranch) | grep -E -v  $(git defaultBranch)$ | xargs -r git branch -d && git remote prune origin
+alias.lg=log --graph --all --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)%an%Creset %C(yellow)%d%Creset'
+alias.serve=!git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
+alias.m=!git checkout $(git defaultBranch)
+alias.unstage=reset HEAD --
+help.autocorrect=1
+push.default=simple
+branch.master.mergeoptions=--no-edit
+pull.rebase=false
+init.defaultbranch=master
+user.email=jamiechambers21@gmail.com
+user.name=Jamie Chambers
+credential.https://github.com.helper=
+credential.https://github.com.helper=!/usr/bin/gh auth git-credential
+credential.https://gist.github.com.helper=
+credential.https://gist.github.com.helper=!/usr/bin/gh auth git-credential
